@@ -4,32 +4,423 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Pub Atlas | Collect pubs. Build your Atlas.</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Elegant typography to match the Pub Atlas brand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           PUB ATLAS BRAND COLOURS
+           ========================================= */
+
+        :root {
+            --atlas-green: #0F2B21;
+            --heritage-gold: #C8A15A;
+            --vellum: #F2E9D6;
+            --pub-black: #111111;
+            --old-brick: #7A1F20;
+        }
+
+
+        /* =========================================
+           GLOBAL STYLES
+           ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--atlas-green);
+            background-color: var(--vellum);
+            font-family: "Lora", Georgia, serif;
+        }
+
+        section {
+            padding: 100px 8%;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 32px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--atlas-green);
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu a {
+            color: var(--atlas-green);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .menu a:hover {
+            opacity: 0.6;
+        }
+
+
+        /* =========================================
+           HERO
+           Inspired by the Pub Atlas loading screen
+           ========================================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 160px 8% 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at center, rgba(255,255,255,0.55), transparent 50%),
+                linear-gradient(135deg, #F7F0E2 0%, var(--vellum) 100%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border: 1px solid rgba(200, 161, 90, 0.16);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            border: 1px solid rgba(15, 43, 33, 0.08);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .compass {
+            position: relative;
+            z-index: 1;
+            width: 105px;
+            height: 105px;
+            border: 2px solid var(--heritage-gold);
+            border-radius: 50%;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--heritage-gold);
+            font-family: "Cormorant Garamond", Georgia, serif;
+        }
+
+        .compass::before {
+            content: "✦";
+            font-size: 3.5rem;
+            line-height: 1;
+        }
+
+        .compass span {
+            position: absolute;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .north { top: 5px; }
+        .south { bottom: 5px; }
+        .east { right: 7px; }
+        .west { left: 7px; }
+
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(5rem, 12vw, 10rem);
+            line-height: 0.85;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: var(--atlas-green);
+        }
+
+        .hero h2 {
+            position: relative;
+            z-index: 1;
+            margin: 38px 0 28px;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            font-weight: 500;
+        }
+
+        .journey {
+            position: relative;
+            z-index: 1;
+            margin-top: 35px;
+            color: var(--heritage-gold);
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .hero-button {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding: 15px 30px;
+            border: 1px solid var(--atlas-green);
+            color: var(--vellum);
+            background: var(--atlas-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            transition: all 0.25s ease;
+        }
+
+        .hero-button:hover {
+            background: var(--heritage-gold);
+            border-color: var(--heritage-gold);
+            color: var(--atlas-green);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           ABOUT SECTION
+           ========================================= */
+
+        #about {
+            background: var(--atlas-green);
+            color: var(--vellum);
+            text-align: center;
+        }
+
+        #about h3,
+        #download h3 {
+            margin: 0 0 35px;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        #about h3 {
+            color: var(--heritage-gold);
+        }
+
+        #about p {
+            max-width: 720px;
+            margin: 18px auto;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           WAITING LIST SECTION
+           ========================================= */
+
+        #download {
+            text-align: center;
+            background:
+                radial-gradient(circle at center, rgba(200, 161, 90, 0.12), transparent 45%),
+                var(--vellum);
+        }
+
+        #download h3 {
+            color: var(--atlas-green);
+        }
+
+        #download p {
+            max-width: 650px;
+            margin: 15px auto;
+            line-height: 1.8;
+        }
+
+        .waiting-list {
+            max-width: 500px;
+            margin: 40px auto 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="email"] {
+            flex: 1;
+            padding: 16px;
+            border: 1px solid rgba(15, 43, 33, 0.4);
+            background: rgba(255, 255, 255, 0.35);
+            color: var(--atlas-green);
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        input[type="email"]:focus {
+            outline: 2px solid var(--heritage-gold);
+            border-color: var(--heritage-gold);
+        }
+
+        button {
+            padding: 16px 22px;
+            border: 1px solid var(--atlas-green);
+            background: var(--atlas-green);
+            color: var(--vellum);
+            font-family: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        button:hover {
+            background: var(--heritage-gold);
+            border-color: var(--heritage-gold);
+            color: var(--atlas-green);
+        }
+
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        footer {
+            padding: 55px 8%;
+            background: var(--pub-black);
+            color: var(--vellum);
+            text-align: center;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        footer strong {
+            color: var(--heritage-gold);
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 1.8rem;
+            letter-spacing: 0.08em;
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 25px 25px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .menu {
+                gap: 15px;
+            }
+
+            .menu a {
+                font-size: 0.8rem;
+            }
+
+            section {
+                padding: 80px 7%;
+            }
+
+            .hero {
+                padding-top: 140px;
+            }
+
+            .compass {
+                width: 80px;
+                height: 80px;
+            }
+
+            .waiting-list {
+                flex-direction: column;
+            }
+
+            input[type="email"],
+            button {
+                width: 100%;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <header>
         <nav>
             <div class="logo">PUB ATLAS</div>
 
             <div class="menu">
-                #aboutAbout</a>
-                #downloadJoin the Waiting List</a>
+                <a href="#about">About</a>
+                <a href="#download">Join the Waiting List</a>
             </div>
         </nav>
     </header>
 
+
+    <!-- Hero Section -->
     <section class="hero">
 
-        assets/logo.png
+        <div class="compass">
+            <span class="north">N</span>
+            <span class="south">S</span>
+            <span class="east">E</span>
+            <span class="west">W</span>
+        </div>
 
         <h1>PUB ATLAS</h1>
 
         <h2>Collect pubs. Build your Atlas.</h2>
 
-        #download
+        <a href="#download" class="hero-button">
             Join the Waiting List
         </a>
 
@@ -37,17 +428,21 @@
             Discover • Collect • Complete • Explore
         </p>
 
-        <img src="assets/pub sketch.png"
-             alt="Pub Atlas Sketch"
-    <h3>A New Way To Explore Great Pubs</h3>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about">
+
+        <h3>A New Way To Explore Great Pubs</h3>
 
         <p>
             Pub Atlas transforms pub discovery into a collection.
         </p>
 
         <p>
-            Discover remarkable pubs, track the places you've visited and
-            complete curated collections as you build your personal Atlas.
+            Discover remarkable pubs, track the places you have visited
+            and complete curated collections as you build your personal Atlas.
         </p>
 
         <p>
@@ -56,39 +451,39 @@
 
     </section>
 
+
+    <!-- Waiting List Section -->
     <section id="download">
 
-        <div class="download-content">
+        <h3>Start Building Your Atlas</h3>
 
-            assets/phone.png
+        <p>
+            The Pub Atlas app is currently in development.
+        </p>
 
-            <div class="download-text">
+        <p>
+            Join the waiting list and be among the first to hear when we launch.
+        </p>
 
-                <h3>Start Building Your Atlas</h3>
+        <div class="waiting-list">
+            <input type="email" placeholder="Email address" aria-label="Email address">
 
-                <p>
-                    The Pub Atlas app is currently in development.
-                </p>
-
-                <p>
-                    Join the waiting list and be among the first to hear when we launch.
-                </p>
-
-                <input type="email" placeholder="Email address">
-
-                <button>
-                    Join the Waiting List
-                </button>
-
-            </div>
-
+            <button type="button">
+                Join the Waiting List
+            </button>
         </div>
 
     </section>
 
+
+    <!-- Footer -->
     <footer>
 
         <p><strong>PUB ATLAS</strong></p>
+
+        <p>
+            Discover • Collect • Complete • Explore
+        </p>
 
         <p>
             Instagram • Contact • Privacy Policy
