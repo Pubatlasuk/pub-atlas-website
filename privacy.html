@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Privacy Policy | Pub Atlas</title>
+    <meta name="description" content="How Pub Atlas collects and uses your information on pubatlas.co.uk and the waiting list.">
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --atlas-green: #0F2B21;
+            --heritage-gold: #C8A15A;
+            --vellum: #F2E9D6;
+            --pub-black: #111111;
+            --old-brick: #7A1F20;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--atlas-green);
+            background-color: var(--vellum);
+            font-family: "Lora", Georgia, serif;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Top social bar */
+        .top-bar {
+            height: 38px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 22px;
+            background: var(--atlas-green);
+        }
+
+        .top-bar a {
+            display: flex;
+            color: var(--vellum);
+            opacity: 0.85;
+            transition: opacity 0.2s ease, color 0.2s ease;
+        }
+
+        .top-bar a:hover {
+            opacity: 1;
+            color: var(--heritage-gold);
+        }
+
+        .top-bar svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Nav */
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 28px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 30px;
+            height: 30px;
+            border-radius: 7px;
+        }
+
+        .brand span {
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--atlas-green);
+        }
+
+        nav a.back {
+            color: var(--atlas-green);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        nav a.back:hover {
+            opacity: 0.6;
+        }
+
+        /* Article */
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 20px 8% 100px;
+        }
+
+        h1 {
+            font-family: "Fraunces", Georgia, serif;
+            font-size: clamp(2.4rem, 5vw, 3.2rem);
+            font-weight: 600;
+            margin: 10px 0 6px;
+        }
+
+        .updated {
+            color: var(--heritage-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            margin: 0 0 40px;
+        }
+
+        h2 {
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 40px 0 14px;
+        }
+
+        p, li {
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        a.inline {
+            color: var(--atlas-green);
+        }
+
+        a.inline:hover {
+            color: var(--old-brick);
+        }
+
+        strong {
+            color: var(--atlas-green);
+        }
+
+        /* Footer */
+        .footer-illustration {
+            background: var(--vellum);
+            display: flex;
+            justify-content: center;
+            padding: 0 8%;
+            overflow: hidden;
+        }
+
+        .footer-illustration img {
+            width: 100%;
+            max-width: 620px;
+            opacity: 0.9;
+        }
+
+        footer {
+            padding: 45px 8% 55px;
+            background: var(--pub-black);
+            color: var(--vellum);
+            text-align: center;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        footer strong {
+            color: var(--heritage-gold);
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 1.6rem;
+            letter-spacing: 0.08em;
+        }
+
+        .footer-links {
+            font-size: 0.9rem;
+            opacity: 0.75;
+        }
+
+        .footer-links a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--heritage-gold);
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                padding: 22px 7%;
+            }
+
+            .brand span {
+                font-size: 1.2rem;
+            }
+
+            main {
+                padding: 10px 7% 80px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Top social bar -->
+    <div class="top-bar">
+        <a href="https://www.instagram.com/pubatlasuk/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        <a href="https://x.com/pubatlasuk" target="_blank" rel="noopener" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+            </svg>
+        </a>
+        <a href="https://www.tiktok.com/@pubatlasuk" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16.5 3h-3.1v11.6a2.7 2.7 0 1 1-2.1-2.63V8.8a5.7 5.7 0 1 0 5.2 5.68V9.94a7.3 7.3 0 0 0 4.2 1.33V8.2a4.2 4.2 0 0 1-4.2-4.2z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <nav>
+        <a class="brand" href="index.html">
+            <img src="assets/favicon/icon-192.png" alt="Pub Atlas compass mark">
+            <span>PUB ATLAS</span>
+        </a>
+
+        <a class="back" href="index.html">← Back to home</a>
+    </nav>
+
+    <main>
+
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: 30 August 2026</p>
+
+        <p>
+            This policy explains what information Pub Atlas collects through this website
+            (pubatlas.co.uk) and our pre-launch waiting list, and how we use it. Pub Atlas
+            is currently in development — once the app itself launches, this policy will
+            be extended to cover the app's own data collection.
+        </p>
+
+        <h2>What we collect</h2>
+        <p>
+            When you join the waiting list, we collect the email address you provide.
+            Our form provider, Formspree, may also automatically log standard technical
+            information (such as IP address and browser type) for security and spam
+            prevention. We don't ask for or collect anything beyond this on the website.
+        </p>
+
+        <h2>How we use it</h2>
+        <p>
+            We use your email address solely to notify you when Pub Atlas launches, and
+            to send occasional updates about the app's progress before then. We do not
+            sell, rent, or share your information with third parties for their own
+            marketing purposes.
+        </p>
+
+        <h2>Third-party services</h2>
+        <p>
+            We use <a class="inline" href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree</a>
+            to process waiting-list submissions, and standard web hosting services to
+            serve this site. These providers process data on our behalf under their own
+            privacy and security terms.
+        </p>
+
+        <h2>Legal basis and your rights</h2>
+        <p>
+            Under UK data protection law (UK GDPR), we rely on your consent — given when
+            you submit the waiting-list form — as the legal basis for using your email
+            address. You have the right to:
+        </p>
+        <ul>
+            <li>ask what information we hold about you;</li>
+            <li>ask us to correct or delete it;</li>
+            <li>withdraw your consent at any time (for example, by asking to be removed from the waiting list); and</li>
+            <li>complain to the <a class="inline" href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">Information Commissioner's Office (ICO)</a> if you believe we haven't handled your data properly.</li>
+        </ul>
+
+        <h2>How long we keep it</h2>
+        <p>
+            We keep waiting-list email addresses until Pub Atlas launches and initial
+            launch communications are complete, or until you ask us to delete your data,
+            whichever happens first.
+        </p>
+
+        <h2>Cookies</h2>
+        <p>
+            This website does not currently use cookies or analytics tracking. If that
+            changes in future, we'll update this policy to explain what's used and why.
+        </p>
+
+        <h2>Children</h2>
+        <p>
+            This website is not directed at children, and we do not knowingly collect
+            information from anyone under 13.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+            We may update this policy as the website and app evolve. Any changes will be
+            posted on this page with a new "last updated" date.
+        </p>
+
+        <h2>Contact us</h2>
+        <p>
+            For questions about this policy or your data, contact us at
+            <a class="inline" href="mailto:hello@pubatlas.co.uk">hello@pubatlas.co.uk</a>.
+            For business enquiries, reach us at
+            <a class="inline" href="mailto:info@pubatlas.co.uk">info@pubatlas.co.uk</a>.
+        </p>
+
+    </main>
+
+    <div class="footer-illustration">
+        <img src="assets/pubsketch-transparent.png" alt="" role="presentation">
+    </div>
+
+    <footer>
+        <p><strong>PUB ATLAS</strong></p>
+
+        <p>
+            Discover • Collect • Complete • Explore
+        </p>
+
+        <p class="footer-links">
+            <a href="https://www.instagram.com/pubatlasuk/" target="_blank" rel="noopener">Instagram</a> •
+            <a href="https://x.com/pubatlasuk" target="_blank" rel="noopener">X</a> •
+            <a href="https://www.tiktok.com/@pubatlasuk" target="_blank" rel="noopener">TikTok</a> •
+            <a href="mailto:hello@pubatlas.co.uk">Contact</a> •
+            <a href="privacy.html">Privacy Policy</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
