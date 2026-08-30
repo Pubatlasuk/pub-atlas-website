@@ -347,6 +347,26 @@
             color: var(--atlas-green);
         }
 
+        button:disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+
+        .form-message {
+            min-height: 1.2em;
+            margin: 14px 0 0 !important;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .form-message.success {
+            color: var(--atlas-green);
+        }
+
+        .form-message.error {
+            color: var(--old-brick);
+        }
+
         /* =========================================
            FOOTER
            ========================================= */
@@ -386,6 +406,15 @@
         .footer-links {
             font-size: 0.9rem;
             opacity: 0.75;
+        }
+
+        .footer-links a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--heritage-gold);
         }
 
 
@@ -557,13 +586,15 @@
                     Join the waiting list and be among the first to hear when we launch.
                 </p>
 
-                <form class="waiting-list" onsubmit="event.preventDefault();">
+                <form class="waiting-list" id="waitlist-form" action="https://formspree.io/f/xvkognyw" method="POST">
                     <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
 
                     <button type="submit">
                         Join the Waiting List
                     </button>
                 </form>
+
+                <p class="form-message" id="waitlist-message" aria-live="polite"></p>
 
             </div>
 
@@ -590,10 +621,49 @@
         </p>
 
         <p class="footer-links">
-            Instagram • Contact • Privacy Policy
+            <a href="https://www.instagram.com/pubatlasuk/" target="_blank" rel="noopener">Instagram</a> •
+            <a href="https://x.com/pubatlasuk" target="_blank" rel="noopener">X</a> •
+            <a href="https://www.tiktok.com/@pubatlasuk" target="_blank" rel="noopener">TikTok</a> •
+            Contact • Privacy Policy
         </p>
 
     </footer>
+
+    <script>
+        (function () {
+            var form = document.getElementById('waitlist-form');
+            var message = document.getElementById('waitlist-message');
+            var button = form.querySelector('button');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                button.disabled = true;
+                button.textContent = 'Joining…';
+                message.textContent = '';
+                message.className = 'form-message';
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                }).then(function (response) {
+                    if (response.ok) {
+                        form.hidden = true;
+                        message.textContent = "You're on the list — we'll email you when Pub Atlas launches.";
+                        message.classList.add('success');
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                }).catch(function () {
+                    message.textContent = 'Something went wrong — please try again in a moment.';
+                    message.classList.add('error');
+                    button.disabled = false;
+                    button.textContent = 'Join the Waiting List';
+                });
+            });
+        })();
+    </script>
 
 </body>
 
