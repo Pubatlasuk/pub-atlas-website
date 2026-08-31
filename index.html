@@ -204,10 +204,10 @@
         .hero-photo {
             position: relative;
             z-index: 1;
-            width: min(440px, 78vw);
-            border-radius: 18px;
-            margin: 34px 0 8px;
-            box-shadow: 0 30px 60px -20px rgba(15, 43, 33, 0.45), 0 0 0 1px rgba(200, 161, 90, 0.25);
+            width: min(480px, 82vw);
+            margin: 30px 0 8px;
+            opacity: 0.92;
+            filter: drop-shadow(0 18px 26px rgba(15, 43, 33, 0.22));
         }
 
         .hero h1 {
@@ -400,20 +400,6 @@
            FOOTER
            ========================================= */
 
-        .footer-illustration {
-            background: var(--vellum);
-            display: flex;
-            justify-content: center;
-            padding: 0 8%;
-            overflow: hidden;
-        }
-
-        .footer-illustration img {
-            width: 100%;
-            max-width: 620px;
-            opacity: 0.9;
-        }
-
         footer {
             padding: 45px 8% 55px;
             background: var(--pub-black);
@@ -504,9 +490,6 @@
                 width: 100%;
             }
 
-            .footer-illustration img {
-                max-width: 400px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -585,7 +568,7 @@
 
         <h1>PUB ATLAS</h1>
 
-        <img class="hero-photo" src="assets/hero-sign.jpg" alt="The Pub Atlas hanging pub sign, gold London skyline on dark green, hung outside a pub">
+        <img class="hero-photo" src="assets/pubsketch-transparent.png" alt="Line illustration of a London pub on a street corner">
 
         <h2>Collect pubs. Build your Atlas.</h2>
 
@@ -654,12 +637,6 @@
         </div>
 
     </section>
-
-
-    <!-- Footer illustration -->
-    <div class="footer-illustration">
-        <img src="assets/pubsketch-transparent.png" alt="" role="presentation">
-    </div>
 
 
     <!-- Footer -->
